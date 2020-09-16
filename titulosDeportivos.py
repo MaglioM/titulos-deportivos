@@ -1,14 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-ole = requests.get("https://ole.com.ar")
-
-ole_src = ole.content
-
-soupOle = BeautifulSoup(ole_src,'lxml')
-
-titulos = []
-
 def capturaTitulos(pagina):
 	fuente = BeautifulSoup(requests.get(pagina).content, 'lxml')
 	titulos = []
