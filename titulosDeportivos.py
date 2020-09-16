@@ -1,4 +1,5 @@
 import requests
+import tkinter as tk
 from bs4 import BeautifulSoup
 
 def capturaTitulos(pagina):
@@ -11,8 +12,18 @@ def capturaTitulos(pagina):
 	return titulos
 
 def imprimeTitulos(fuente):
+	titulos = ""
 	for titulo in capturaTitulos(fuente):
-		print(titulo,'\n')
+		titulos += "\n" + titulo + "\n"
+	return titulos
 
+def main():
+	ventana = tk.Tk()
+	contenido = tk.Label(
+		text = imprimeTitulos("https://ole.com.ar"),
+		foreground = "white",
+		background = "black")
+	contenido.pack()
+	ventana.mainloop()
 
-imprimeTitulos("https://ole.com.ar")
+main()
