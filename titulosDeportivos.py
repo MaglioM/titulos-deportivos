@@ -5,14 +5,22 @@ ole = requests.get("https://ole.com.ar")
 
 ole_src = ole.content
 
-soup = BeautifulSoup(ole_src, 'lxml')
+soupOle = BeautifulSoup(ole_src,'lxml')
 
-titulos= []
+titulos = []
 
-for h2_tag in soup.find_all("h2"):
-	a_tag = h2_tag.find('a')
-	titulo = a_tag.attrs['title']
-	titulos.append(titulo)
+def capturaTitulos(pagina):
+	fuente = BeautifulSoup(requests.get(pagina).content, 'lxml')
+	titulos = []
+	for h2_tag in fuente.find_all("h2"):
+		a_tag = h2_tag.find('a')
+		titulo = a_tag.attrs['title']
+		titulos.append(titulo)
+	return titulos
 
-for titulo in titulos:
-	print(titulo,'\n')
+def imprimeTitulos(fuente):
+	for titulo in capturaTitulos(fuente):
+		print(titulo,'\n')
+
+
+imprimeTitulos("https://ole.com.ar")
