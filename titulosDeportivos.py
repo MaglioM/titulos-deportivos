@@ -2,6 +2,7 @@ import requests
 from tkinter import *
 import tkinter.font as font
 from bs4 import BeautifulSoup
+from listaExcluidos import excluidos
 
 def capturaTitulos(pagina):
 	fuente = BeautifulSoup(requests.get(pagina).content, 'lxml')
@@ -20,7 +21,8 @@ def botonFuente(master,fuente):
 			foreground="#ffa",
 			background="#025")
 	for titulo in capturaTitulos(fuente):
-		contenido.insert(END,titulo+'\n\n')
+		if titulo not in excluidos:
+			contenido.insert(END,titulo+'\n\n')
 	contenido.pack()
 	scrollbar = Scrollbar(master)
 	scrollbar.config(command=contenido.yview)
