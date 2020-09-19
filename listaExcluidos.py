@@ -12,4 +12,19 @@ excluidos = [
 'Cómo acceder a ESPN Play',
 'ESPN App: lo mejor del deporte al alcance de la mano',
 'Programación de ESPN',
+'ESPN',
+'Personaliza ESPN',
+'ATP',
+'Titulares'
+'¿Cuándo se juega?'
+'ESPN Play'
+'Videos virales'
+'#SeparadosPeroJuntos'
+'ESPN App'
+'ESPN Guía'
+'ESPN Redes'
+'ESPN FC'
+'Favoritos'
+'Fantasía'
+'Personaliza ESPN'
 ]
