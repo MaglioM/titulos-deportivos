@@ -1,2 +1,2 @@
 # titulos-deportivos
-Obtiene de internet los últimos títulos deportivos y los muestra en pantalla.
+Personal project to practice Web Scrapping. Gets the latest headlines from Argentina main sports news websites.
